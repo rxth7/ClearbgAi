@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearBgAi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="static/favicon.ico">
+</head>
+
+<body>
+    <!-- Logo and Page Name -->
+    <div class="page-logo">
+        <img src="static/logo.png" alt="Logo" class="logo-img">
+        <span class="logo-text">ClearBgAi</span>
+    </div>
+
+    <!-- Floating Image -->
+    <div class="floating-image">
+        <img src="static/woman-flowers.jpg" alt="Sample" class="float-img">
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Title Section -->
+            <div class="header">
+                <h1>Remove Image Background</h1>
+                <p class="subtitle">100% Automatically and <span class="highlight">Free</span></p>
+            </div>
+
+            <!-- Upload Area -->
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <img src="static/upload-icon.png" alt="Upload" class="icon-img">
+                        </div>
+                        <button class="upload-btn" id="uploadBtn">Upload Image</button>
+                        <p class="upload-text">or drop a file,<br>paste image or URL</p>
+                        <div class="keyboard-hint">Press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste</div>
+                    </div>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            </div>
+
+            <!-- Preview Container -->
+            <div class="preview-container" id="previewContainer" style="display: none;">
+                <div class="preview-wrapper">
+                    <div class="loading-overlay" id="loadingOverlay">
+                        <div class="loading-spinner"></div>
+                        <p>Removing background...</p>
+                    </div>
+                    <div class="image-preview" id="imagePreview">
+                        <canvas id="beforeCanvas" class="preview-canvas"></canvas>
+                        <canvas id="afterCanvas" class="preview-canvas"></canvas>
+                        <div class="transparent-bg" id="transparentBg"></div>
+                        <div class="cursor-control" id="cursorControl">
+                            <div class="cursor-line"></div>
+                            <div class="cursor-handle">
+                                <img src="static/cursor-icon.png" alt="Compare" class="cursor-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="controls" id="controls" style="display: none;">
+                        <div class="main-controls">
+                            <button class="download-btn" id="downloadBtn"> Download</button>
+                            <button class="new-image-btn" id="newImageBtn"> New Image</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- GIF Container above features section -->
+            <div class="gif-container" id="gifContainer">
+                <img src="static/placeholder2.gif" alt="Demo or Animation" class="demo-gif">
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-section" id="featuresSection">
+                <p><b><i><h3>Dont have image?. try drag or paste this images</h3></i></b></p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="static/feature1.jpg" alt="Feature 1" class="feature-image">
+                        <h3>High Quality Results</h3>
+                        <p>AI-powered background removal with precision</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="static/feature2.jpg" alt="Feature 2" class="feature-image">
+                        <h3>Instant Processing</h3>
+                        <p>Remove backgrounds in seconds, not minutes</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="static/feature3.jpg" alt="Feature 3" class="feature-image">
+                        <h3>Multiple Formats</h3>
+                        <p>Support for PNG, JPG, and other image formats</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="static/feature4.jpg" alt="Feature 4" class="feature-image">
+                        <h3>Free to Use</h3>
+                        <p>No watermarks, no signup required</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description-grid">
+                    <div class="description-column">
+                        <h3>Perfect for Everyone</h3>
+                        <p>Whether you're a professional designer, social media enthusiast, or just someone who needs quick background removal, our tool is designed for users of all skill levels. No technical knowledge required.</p>
+                        <p>Our advanced AI technology ensures that even complex images with intricate details like hair, fur, or transparent objects are handled with precision.</p>
+                    </div>
+                    <div class="description-column">
+                        <h3>Advanced Technology</h3>
+                        <p>Powered by state-of-the-art machine learning algorithms, our background removal tool delivers professional-quality results in seconds. The AI has been trained on millions of images to understand complex edge cases.</p>
+                        <p>From portraits to products, animals to graphics - our tool handles diverse image types with remarkable accuracy and consistency.</p>
+                    </div>
+                    <div class="description-column">
+                        <h3>Privacy & Security</h3>
+                        <p>Your images are processed securely and are never stored on our servers. We respect your privacy and ensure that your personal or business images remain completely confidential.</p>
+                        <p>All processing happens in real-time, and images are automatically deleted after processing to maintain your privacy and security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
